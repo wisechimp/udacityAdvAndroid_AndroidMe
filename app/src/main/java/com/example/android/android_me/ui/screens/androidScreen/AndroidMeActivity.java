@@ -1,4 +1,4 @@
-package com.example.android.android_me.ui;
+package com.example.android.android_me.ui.screens.androidScreen;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;

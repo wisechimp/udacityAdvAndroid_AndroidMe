@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.android_me.ui;
+package com.example.android.android_me.ui.screens.mainScreen.recyclerViewFiles;
 
 import android.content.Context;
 import android.view.View;
@@ -35,6 +35,7 @@ public class MasterListAdapter extends BaseAdapter {
 
     /**
      * Constructor method
+     * @param context
      * @param imageIds The list of images to display
      */
     public MasterListAdapter(Context context, List<Integer> imageIds) {

@@ -1,4 +1,4 @@
-package com.example.android.android_me.ui;
+package com.example.android.android_me.ui.screens.androidScreen;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
