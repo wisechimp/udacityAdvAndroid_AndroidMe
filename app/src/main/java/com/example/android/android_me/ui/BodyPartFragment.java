@@ -2,6 +2,7 @@ package com.example.android.android_me.ui;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,10 +12,13 @@ import android.widget.ImageView;
 
 import com.example.android.android_me.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BodyPartFragment extends Fragment {
 
+    private String imageIdList = "Image ID List";
+    private String listIndex = "List Index";
     private List<Integer> mImageIds;
     private int mListIndex;
 
@@ -25,7 +29,11 @@ public class BodyPartFragment extends Fragment {
     // Inflate the fragment and set image resource
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        //final AndroidMeViewModel viewModel = ViewModelProviders.of(this).get(AndroidMeViewModel.class);
+        // Load the saved state (the list of images and list index) if there is one
+        if(savedInstanceState != null) {
+            mImageIds = savedInstanceState.getIntegerArrayList(imageIdList);
+            mListIndex = savedInstanceState.getInt(listIndex);
+        }
 
         // Inflate the Android-Me fragment layout
         View rootView = inflater.inflate(R.layout.fragment_body_part, container, false);
@@ -68,4 +76,13 @@ public class BodyPartFragment extends Fragment {
         mListIndex = listIndex;
     }
 
+    //https://medium.com/androiddevelopers/viewmodels-persistence-onsaveinstancestate-restoring-ui-state-and-loaders-fc7cc4a6c090
+
+    // Saving the fragment's current state for screen rotation
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle currentState) {
+
+        currentState.putIntegerArrayList(imageIdList, (ArrayList<Integer>) mImageIds);
+        currentState.putInt(listIndex, mListIndex);
+    }
 }
