@@ -53,7 +53,7 @@ public class MasterListGridAdapter extends RecyclerView.Adapter<MasterListGridAd
 
     // Method that executes your code for the action received
     public void onItemClick(View view, int position) {
-        Log.i("TAG", "You clicked number " + mAllBodyParts.get(position).toString() + ", which is at cell position " + position);
+        //Log.i("TAG", "You clicked number " + mAllBodyParts.get(position).toString() + ", which is at cell position " + position);
     }
 
     @Override
