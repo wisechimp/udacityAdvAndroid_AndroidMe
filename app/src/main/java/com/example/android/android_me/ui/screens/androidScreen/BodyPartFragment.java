@@ -1,6 +1,5 @@
 package com.example.android.android_me.ui.screens.androidScreen;
 
-import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;

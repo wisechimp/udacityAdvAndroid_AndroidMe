@@ -9,29 +9,29 @@ import com.example.android.android_me.data.AndroidImageAssets;
 
 public class AndroidMeActivity extends AppCompatActivity {
 
-    private int headIndex = 0;
-    private int bodyIndex = 0;
-    private int legsIndex = 0;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_android_me);
 
         //Only create a new starting body if there is no saved information
+
         if (savedInstanceState == null) {
             // Create a head part instance and display it by initialising a list of heads and selecting one
             BodyPartFragment headFragment = new BodyPartFragment();
             headFragment.setImageIds(AndroidImageAssets.getHeads());
+            int headIndex = getIntent().getIntExtra("headIndex", 0);
             headFragment.setListIndex(headIndex);
 
             BodyPartFragment bodyFragment = new BodyPartFragment();
             bodyFragment.setImageIds(AndroidImageAssets.getBodies());
+            int bodyIndex = getIntent().getIntExtra("bodyIndex", 0);
             bodyFragment.setListIndex(bodyIndex);
 
             BodyPartFragment legsFragment = new BodyPartFragment();
             legsFragment.setImageIds(AndroidImageAssets.getLegs());
-            legsFragment.setListIndex(legsIndex);
+            int legIndex = getIntent().getIntExtra("legIndex", 0);
+            legsFragment.setListIndex(legIndex);
 
             // Using a FragmentManager to get the fragment onto the screen
             FragmentManager fragmentManager = getSupportFragmentManager();

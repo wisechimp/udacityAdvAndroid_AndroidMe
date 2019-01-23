@@ -8,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.android.android_me.R;
 import com.example.android.android_me.data.AndroidImageAssets;
@@ -51,7 +50,7 @@ public class MasterListFragment extends Fragment {
 
         mContext = this.getActivity().getApplicationContext();
         setAllImageIds(AndroidImageAssets.getAll());
-        
+
         // Inflate the Android-Me fragment layout
         View rootView = inflater.inflate(R.layout.fragment_master_list, container, false);
 
